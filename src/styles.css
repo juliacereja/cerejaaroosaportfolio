@@ -402,6 +402,45 @@ p { color: var(--muted); font-size: 16px; line-height: 1.75; }
 }
 .about > div { position: relative; }
 
+.partner-strip {
+  padding-top: 28px;
+}
+
+.partner-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 8px;
+}
+
+.partner-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.partner-card img {
+  background: rgba(245, 239, 198, 0.94);
+  border-radius: 50%;
+  box-shadow: 0 14px 30px rgba(35, 24, 21, 0.14);
+  aspect-ratio: 1;
+  padding: 14px;
+  object-fit: contain;
+  width: min(100%, 150px);
+}
+
+.partner-card span {
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.partner-strip .section-title {
+  margin-bottom: 28px;
+}
+
 .show-grid, .metric-grid, .card-grid, .destination-grid, .testimonial-grid, .brand-grid, .service-grid {
   display: grid;
   gap: 22px;
@@ -688,7 +727,7 @@ form button { background: var(--cherry); border: 0; border-radius: 999px; color:
   .hero, .about, .contact { grid-template-columns: 1fr; }
   .hero { padding-top: 130px; }
   .metric-grid, .video-grid, .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .card-grid, .testimonial-grid, .brand-grid, .destination-grid { grid-template-columns: 1fr 1fr; }
+  .card-grid, .testimonial-grid, .brand-grid, .destination-grid, .partner-grid { grid-template-columns: 1fr 1fr; }
   .timeline { grid-template-columns: 1fr; }
   .timeline-step svg { transform: none; }
 }
@@ -714,7 +753,7 @@ form button { background: var(--cherry); border: 0; border-radius: 999px; color:
   .scroll-indicator { display: none; }
   .section { padding: 72px 18px; }
   .polaroid-photo img, .contact > img { height: 420px; }
-  .show-grid, .metric-grid, .video-grid, .card-grid, .destination-grid, .testimonial-grid, .brand-grid, .service-grid { grid-template-columns: 1fr; }
+  .show-grid, .metric-grid, .video-grid, .card-grid, .destination-grid, .testimonial-grid, .brand-grid, .service-grid, .partner-grid { grid-template-columns: 1fr; }
   .food-basket-wrap { left: 50%; margin-left: 0; transform: translateX(-50%); width: 112vw; }
   .food-pizza { left: 7%; top: 5%; width: 27%; }
   .food-burger { left: 36%; top: 17%; width: 29%; }

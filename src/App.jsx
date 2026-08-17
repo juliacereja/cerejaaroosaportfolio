@@ -23,6 +23,11 @@ import aboutPhoto from '../sobremimjueleo.JPG';
 import contactPhoto from '../djoy-87.jpg';
 import foodBasketPhoto from './assets/cestacomida-horizontal.png';
 import barcelonaPhoto from './assets/barcelona.jpg';
+import berriesLogo from '../berrieslogo.jpg';
+import sushiConceitoLogo from '../sushiconceitologo.jpg';
+import izzasPizzaLogo from '../izzaspizzalogo.jpg';
+import casaCatarinaLogo from '../casacatarinalogo.jpg';
+import triplexLogo from '../triplexlogo.jpg';
 import friesPhoto from './assets/foods/batatafrita.png';
 import cakePhoto from './assets/foods/bolodechocolate.png';
 import burritoPhoto from './assets/foods/burrito.png';
@@ -122,6 +127,14 @@ const testimonials = [
   { name: 'Marina Costa', role: 'Casa Catarina', text: 'A entrega ficou elegante, verdadeira e trouxe uma percepção muito mais humana para a marca.' },
   { name: 'Rafael Nunes', role: 'Sushi Conceito', text: 'Eles conseguiram traduzir a experiência do restaurante com leveza e muita qualidade visual.' },
   { name: 'Clara Martins', role: 'Hotel boutique', text: 'O conteúdo parece indicação de amigos, mas com acabamento profissional de campanha.' },
+];
+
+const partnerBrands = [
+  { name: 'Berries', logo: berriesLogo },
+  { name: 'Sushi Conceito', logo: sushiConceitoLogo },
+  { name: 'Izza\'s Pizza', logo: izzasPizzaLogo },
+  { name: 'Casa Catarina', logo: casaCatarinaLogo },
+  { name: 'Triplex Botafogo', logo: triplexLogo },
 ];
 
 const favoriteFoods = [
@@ -342,11 +355,23 @@ export default function App() {
           </div>
         </section>
 
+        <section className="section partner-strip page-soil" id="marcas-parceiras">
+          <SectionTitle eyebrow="Marcas parceiras" title="Nossas marcas parceiras" />
+          <div className="partner-grid">
+            {partnerBrands.map((brand) => (
+              <motion.div className="partner-card" key={brand.name} whileHover={{ y: -4 }}>
+                <img src={brand.logo} alt={brand.name} loading="lazy" />
+                <span>{brand.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         <Gallery />
 
         <section className="section restaurants food-basket-section chapter-cards page-soil" id="restaurantes"><SectionTitle eyebrow="Comidas favoritas" title="O que a gente mais ama comer" /><div className="food-basket-wrap"><motion.div className="food-basket-stage" initial={{ scale: 0.96, rotate: -1.5 }} whileInView={{ scale: 1, rotate: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}><img className="food-basket" src={foodBasketPhoto} alt="Cesta de mercado para comidas favoritas" loading="lazy" />{favoriteFoods.map((food) => <img key={food.label} className={`food-item ${food.className}`} src={food.image} alt={food.label} loading="lazy" />)}</motion.div></div></section>
 
-        <section className="section destinations chapter-blue page-blue" id="viagens"><SectionTitle eyebrow="Destinos favoritos" title="Viajens que mais amamos" /><div className="destination-grid">{destinations.map((item, index) => <DestinationCard key={item.name} item={item} index={index} />)}</div></section>
+        <section className="section destinations chapter-blue page-blue" id="viagens"><SectionTitle eyebrow="Destinos favoritos" title="Viajens dos sonhos" /><div className="destination-grid">{destinations.map((item, index) => <DestinationCard key={item.name} item={item} index={index} />)}</div></section>
 
         <section className="section services page-yellow" id="serviços"><SectionTitle eyebrow="Serviços" title="Conteúdo bonito, útil e pensado para conversão." /><div className="service-grid">{services.map((service, index) => <ServiceCard key={service.title} service={service} index={index} />)}</div></section>
 
