@@ -422,11 +422,10 @@ p { color: var(--muted); font-size: 16px; line-height: 1.75; }
 }
 
 .partner-card img {
-  background: rgba(245, 239, 198, 0.94);
-  border-radius: 50%;
-  box-shadow: 0 14px 30px rgba(35, 24, 21, 0.14);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   aspect-ratio: 1;
-  padding: 14px;
   object-fit: contain;
   width: min(100%, 150px);
 }
